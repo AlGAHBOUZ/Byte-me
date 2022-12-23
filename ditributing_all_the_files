@@ -1,0 +1,5 @@
+Button.h (class)
+Cards.h (class)
+main.cpp (the game)
+cmake-build-debug (folder)
+  img (folder contains all the images of the cards and the background)
