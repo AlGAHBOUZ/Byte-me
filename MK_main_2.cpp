@@ -62,7 +62,6 @@ int main()
             window.clear();
             window.draw(s);
             window.draw(rec1);
-//            window.draw(rec2);
             window.display();
         }
     }
