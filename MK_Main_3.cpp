@@ -31,7 +31,7 @@ int main()
 
 
     RectangleShape rec1;
-    rec1.setSize(Vector2f (120, 160));
+    rec1.setSize(Vector2f (120, 165));
     Rect<float> sizeOfRec1 = rec1.getGlobalBounds();
     rec1.setOrigin( Vector2f(sizeOfRec1.width/2, sizeOfRec1.height/2) );
     Vector2f currPosition(1120,170);
