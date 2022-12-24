@@ -42,6 +42,21 @@ int main()
     }
     rec1.setTexture(&c1);
 
+    RectangleShape rec2;
+    Rect<float> sizeOfRec2 = rec2.getGlobalBounds();
+    rec2.setOrigin( Vector2f(sizeOfRec2.width/2, sizeOfRec2.height/2) );
+    Vector2f currPosition2(1060,85+35);
+    rec2.setPosition(currPosition2);
+    rec2.setSize(Vector2f (120, 160));
+
+    Texture c2;
+    if (!c2.loadFromFile("IMG/Cards/3_of_spades.png")) {
+        cout << "Load failed" << std::endl;
+        system("pause");
+        return -1;
+    }
+    rec2.setTexture(&c2);
+
 
 
     Event event;
@@ -62,6 +77,7 @@ int main()
             window.clear();
             window.draw(s);
             window.draw(rec1);
+            window.draw(rec2);
             window.display();
         }
     }
