@@ -10,7 +10,9 @@ using namespace std;
 
 void shuffle_array(Cards * arr[], int n) {
     // To obtain a time-based seed
-    unsigned seed = 0;
+    // unsigned seed = 0;
+    // another way of calculating the seed which makes different shuffle each time unlike the previous line
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();   // maybe it will need std::chrono // WE SHOULD TEST IT
     // Shuffling our array
     shuffle(arr, arr + n, default_random_engine(seed));
 }
