@@ -1,2 +1,2 @@
-# solitare_very_zefto
-habd
+# Solitaire_project
+Data Structures Course Project (EUI second year)
