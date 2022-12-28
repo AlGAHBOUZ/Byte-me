@@ -1,5 +1,8 @@
 Button.h (class)
-Cards.h (class)
+Button.cpp
+Card.h (class)
+Card.cpp
 main.cpp (the game)
 cmake-build-debug (folder)
   img (folder contains all the images of the cards and the background)
+  HelloSFML.exe (executable file)
