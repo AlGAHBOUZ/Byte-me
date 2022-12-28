@@ -15,3 +15,5 @@
 	  Function to check for win or lose (Bool)
 	  Function to return drawn cards to the deck
 	  Ayman All mighty Function
+NOTES:-
+- path of the image of a card is: img/(number)(symbol).png
