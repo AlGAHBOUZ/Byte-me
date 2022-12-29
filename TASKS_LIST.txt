@@ -17,3 +17,10 @@
 	  Ayman All mighty Function
 NOTES:-
 - path of the image of a card is: img/(number)(symbol).png
+Additional Features:-
+- Drag & Drop cards
+- Timer (By: Toppa)
+- Clock 
+- Icon 
+- Undo option
+- Hint option
