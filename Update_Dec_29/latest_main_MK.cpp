@@ -165,3 +165,34 @@ int main() {
             }
         }
     }
+
+/*
+    // some new stuff
+    // we could make two sets of flags for the same play in order to jump from one valid play to another?
+    bool finale_stack_flag;
+    Card * playingcard;
+    // checking if i can play in the finale cards stack
+    if(final_cards_stacks[1].top()->getNumber() == playingcard->getNumber() -1 && final_cards_stacks[1].top()->getSymbol() == playingcard->getSymbol() ){
+        finale_stack_flag = 1;
+    }
+    // declaring an array to check if we can play in any possible vector
+    bool vector_flag_array_for_valid[7];
+    // looping on all vectors and comparing with the last element to check if we can play on it
+    for (int vec = 0; vec < 7; vec++) {
+        if(card_vectors_array[vec][vec]->getNumber() == playingcard->getNumber() -1 && card_vectors_array[vec][vec]->getColor() != playingcard->getColor()){
+            vector_flag_array_for_valid[vec] = 1;
+        }
+    }
+
+    if(finale_stack_flag){ // and you pressed that card of course
+        final_cards_stacks[1].push(playingcard); // 1 will be changed with the index of the same stack of out card
+    }
+    else{ // or if finale_stack_flag but you pressed that card then if there is a valid move elsewhere the card will jump
+        for (int vec = 0; vec < 7; vec++) {
+            if(vector_flag_array_for_valid[vec]){
+                card_vectors_array[vec].push_back(playingcard);
+                break;
+            }
+        }
+    }
+*/
