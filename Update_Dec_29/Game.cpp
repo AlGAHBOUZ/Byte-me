@@ -149,19 +149,15 @@ void Game::PollEvents() {
 }
 
 void Game::MouseClick() {
-    std::cout << sf::Mouse::getPosition(*window).x << " : " << sf::Mouse::getPosition(*window).y << "\n";
-    // Test
     int st_x = DRAW_STACK_X_POS - CARD_WIDTH / 2;
     int st_y = DRAW_STACK_Y_POS - CARD_HEIGHT / 2;
     int en_x = DRAW_STACK_X_POS + CARD_WIDTH / 2;
     int en_y = DRAW_STACK_Y_POS + CARD_HEIGHT / 2;
-    if (sf::Mouse::getPosition(*window).x >= st_x && sf::Mouse::getPosition(*window).x <= en_x
-        && sf::Mouse::getPosition(*window).y >= st_y && sf::Mouse::getPosition(*window).y <= en_y) {
-        MoveFromDrawCardsStack();
-    }
     // Clicking a card in the draw cards stack
-    else if (!draw_cards_stack.empty() && draw_cards_stack.top()->getGlobalBounds().contains(
-                window->mapPixelToCoords(sf::Mouse::getPosition(*window)))) {
+    if (sf::Mouse::getPosition(*window).x >= st_x && sf::Mouse::getPosition(*window).x <= en_x
+        && sf::Mouse::getPosition(*window).y >= st_y && sf::Mouse::getPosition(*window).y <= en_y
+        || !draw_cards_stack.empty() && draw_cards_stack.top()->getGlobalBounds().contains(
+            window->mapPixelToCoords(sf::Mouse::getPosition(*window)))) {
         MoveFromDrawCardsStack();
     }
     // Clicking a card in the drawn flipped cards stack
