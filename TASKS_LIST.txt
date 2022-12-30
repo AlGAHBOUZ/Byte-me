@@ -11,7 +11,7 @@
 Additional Features:-
 - Drag & Drop cards (By: M_K)
 - Timer (By: Toppa) ✅
-- Score (By: Toppa) 
+- Score (By: Toppa) ✅
 - Icon 
 - Undo option
 - Hint option
