@@ -5,10 +5,13 @@
 - DrawWinFrame function (design by: M_K) ✅
 
 - Edit the second background image (By: M K) ✅
+- Make the sizes of the vector (7) and the final stacks (4) #define 
+- Make any function in any class const (if it can be const) (By: Ayman)
 
 Additional Features:-
 - Drag & Drop cards (By: M_K)
 - Timer (By: Toppa) ✅
+- Score (By: Toppa) 
 - Icon 
 - Undo option
 - Hint option
