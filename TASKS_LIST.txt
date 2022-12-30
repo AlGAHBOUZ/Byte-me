@@ -2,13 +2,13 @@
 - Fix holding a card ✅
 - Function to check for win (Bool) ✅
 - Function to check for lose (Bool) (Need testing)
-- DrawWinFrame function (design by: M_K)
+- DrawWinFrame function (design by: M_K) ✅
 
 - Edit the second background image (By: M K) ✅
 
 Additional Features:-
 - Drag & Drop cards (By: M_K)
-- Timer (By: Toppa) (Fix it)
+- Timer (By: Toppa) ✅
 - Icon 
 - Undo option
 - Hint option
