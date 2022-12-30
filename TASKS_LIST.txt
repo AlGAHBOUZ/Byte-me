@@ -1,12 +1,14 @@
-- Function to move a group of cards together
-- Fix holding a card
-- Function to check for win or lose (Bool)
+- Function to move a group of cards together ✅
+- Fix holding a card ✅
+- Function to check for win (Bool) ✅
+- Function to check for lose (Bool) (Need testing)
+- DrawWinFrame function (design by: M_K)
 
-- Edit the second background image (By: M K)
+- Edit the second background image (By: M K) ✅
 
 Additional Features:-
-- Drag & Drop cards
-- Timer (By: Toppa) (make it minutes and seconds (not only seconds))
+- Drag & Drop cards (By: M_K)
+- Timer (By: Toppa) (Fix it)
 - Icon 
 - Undo option
 - Hint option
