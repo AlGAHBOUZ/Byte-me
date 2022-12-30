@@ -6,5 +6,5 @@ Card.h (class)
 Card.cpp
 main.cpp 
 cmake-build-debug (folder)
-  img (folder contains all the images of the cards and the background)
+  img (folder contains all the images of the cards and the background - also contains some fonts)
   HelloSFML.exe (executable file)
