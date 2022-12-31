@@ -1,2 +1,0 @@
-- The code changes are in (Card.h Card.cpp Game.h Game.cpp main.cpp)
-- Upload all the images and the font and put them in folder (img)
