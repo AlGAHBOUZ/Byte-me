@@ -16,7 +16,7 @@
 
 // WARNING: Do NOT CHANGE any name in this file
 // @ M_K,  @ sajed
-// edits in lines 60 and 278 in Game.cpp and some edits in this file too
+
 
 class Game {
 private:
@@ -77,9 +77,9 @@ private:
     bool hint_pressed = 0;
 
     // Private Functions
-    void InitWindow();
+    void InitWindow(); // added the function that lods the button here too
     void InitStartBtn();
-    void HintBtn();
+    void HintBtn(); // new function to draw the button here
     void InitCards();
     void UpdateBackgroundImage();
     void ShuffleCards();
@@ -103,7 +103,7 @@ public:
     bool Hint(); // habd
     // Move From functions
     void MoveFromDrawCardsStack();
-    void MoveFromFlippedCardsStack();
+    void MoveFromFlippedCardsStack(); 
     void MoveLastCardFromVectors();
     void MoveMultipleCardsFromVectors();
     void MoveFromFinalCardsStack(Card *playing_card);
@@ -111,12 +111,14 @@ public:
     // Move To functions
     bool MoveToFinalCardsStacks(Card *playing_card);
     bool MoveToVectorsCards(Card *playing_card);
+    bool MoveMultipleCardsToVectors(int vec_idx, int card_idx);
+    
+    // new functions to help in hint (same as the above but they don't push)
     bool testMoveToFinalCardsStacks(Card *playing_card);
     bool testMoveToVectorsCards(Card *playing_card);
-    bool MoveMultipleCardsToVectors(int vec_idx, int card_idx);
-
+    
     // Draw to window functions
-    void DrawFrame();
+    void DrawFrame(); // and added some stuff in here too
     void DrawWinFrame();
 };
 
