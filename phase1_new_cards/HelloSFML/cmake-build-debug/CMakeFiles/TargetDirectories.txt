@@ -1,3 +1,0 @@
-D:/EUI/Second Year/Data Structure/HelloSFML/cmake-build-debug/CMakeFiles/HelloSFML.dir
-D:/EUI/Second Year/Data Structure/HelloSFML/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/EUI/Second Year/Data Structure/HelloSFML/cmake-build-debug/CMakeFiles/rebuild_cache.dir
