@@ -13,9 +13,11 @@ Additional Features:-
 - Drag & Drop cards (By: M_K)
 - Timer (By: Toppa) ✅
 - Score (By: Toppa) ✅
-  - Hint option (By: Sajed) ✅ (NEEDS TESTING)
+- Hint option (By: Sajed) ✅ (Combine with the main branch)
 - Icon 
-- Undo option
+- Undo option (Most probably we won't do it)
+
+
 
 NOTES:-
 - path of the image of a card is: img/(number)(symbol).png
