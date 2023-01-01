@@ -19,6 +19,7 @@ Game::Game() {
     InitCards();
     ShuffleCards();
     DistributeCards();
+    InitHintBtn();
 }
 
 // Destructor
@@ -26,6 +27,7 @@ Game::~Game() {
     delete window;
     delete bg_sprite;
     delete start_btn;
+    delete hint_btn;
     for (int i = 0; i < NUMBER_OF_CARDS; i++) {
         delete all_cards_array[i];
     }
@@ -69,6 +71,22 @@ void Game::InitStartBtn() {
         system("pause");
     }
     btn_shape.setTexture(&btn_texture);
+}
+
+void Game::InitHintBtn() {
+    sf::Vector2f hint_size = {185, 53};
+    hint_btn = new Button("Hints!", hint_size, 12, sf::Color::Blue, sf::Color::Black);
+    float btn_x_pos = 30;
+    float btn_y_pos = 15;
+    hint_btn->setPosition({btn_x_pos, btn_y_pos});
+    hint_shape.setSize(hint_size);
+    hint_shape.setPosition({btn_x_pos, btn_y_pos});
+    // Load Button image
+    if (!hint_texture.loadFromFile("img/hint_btn.png")) {
+        std::cout << "Load failed" << std::endl;
+        system("pause");
+    }
+    hint_shape.setTexture(&hint_texture);
 }
 
 void Game::InitCards() {
@@ -118,7 +136,7 @@ void Game::DistributeCards() {
     }
 
     // Distributing the Cards in the beginning of the game to the 7 vectors of cards
-    for (int vec = 0; vec < 7; vec++) {
+    for (int vec = 0; vec < NUMBER_OF_VECTORS; vec++) {
         for (int i = 0; i < vec + 1; i++) {
             card_vectors_array[vec].push_back(draw_cards_stack.top());
             draw_cards_stack.pop();
@@ -148,8 +166,14 @@ void Game::PollEvents() {
             case sf::Event::MouseButtonPressed: {
                 // Clicking the start button in the beginning of the game
                 if (sf::Mouse::Button::Left == event.mouseButton.button){
+                    // If the user clicked the start button
                     if (start_btn->isMouseOver(*window)) {
                         is_window_on_start_frame = 0;
+                        break;
+                    }
+                    // If the user clicked the hint button
+                    if (hint_btn->isMouseOver(*window)) {
+                        hint_pressed = Hint();
                         break;
                     }
                     // Checking if the user clicked on any card
@@ -188,7 +212,7 @@ void Game::MouseClick() {
 
     bool click_on_4_stacks = 0;
     Card * click;
-    for (int i =0; i < 4; i++){
+    for (int i = 0; i < NUMBER_OF_FINAL_STACKS; i++){
         if(final_cards_stacks[i].size() != 0 && final_cards_stacks[i].top()->getGlobalBounds().contains(
                 window->mapPixelToCoords(sf::Mouse::getPosition(*window)))){
             click_on_4_stacks = 1;
@@ -219,7 +243,7 @@ void Game::MouseClick() {
 
 // Winning and losing functions
 bool Game::CheckWinStatus() {
-    for(int i =0; i < 4;i++){
+    for(int i =0; i < NUMBER_OF_FINAL_STACKS;i++){
         if(final_cards_stacks[i].size() != 13){
             return false;
         }
@@ -229,13 +253,13 @@ bool Game::CheckWinStatus() {
 
 // NEEDS TESTING
 bool Game::CheckLossStatus() {
-    for (int vec = 0; vec < 7; vec++) {
+    for (int vec = 0; vec < NUMBER_OF_VECTORS; vec++) {
         int sz = card_vectors_array[vec].size();
         bool card_moved = 0;
         for (int i = 0; i < sz-1; i++) {
             Card * card_played = card_vectors_array[vec][i];
             if (!card_played->getHidden()) {
-                for (int vec2 = 0; vec2 < 7; vec2++) {
+                for (int vec2 = 0; vec2 < NUMBER_OF_VECTORS; vec2++) {
                     int sz2 = card_vectors_array[vec2].size();
                     // Check if the current vector is not empty
                     if (sz2 != 0) {
@@ -279,6 +303,125 @@ bool Game::CheckLossStatus() {
 // but i am pretty sure there are more stuff we need to add
 }
 
+// Hint function
+bool Game::Hint(){
+    // checking if we can move any cards from the drawn flipped stack
+    bool stack_card_moved = 0;
+    if(drawn_flipped_cards_stack.size() !=0){
+        hint = " ";
+        stack_card_moved= testMoveToFinalCardsStacks(drawn_flipped_cards_stack.top());
+        if(!stack_card_moved){
+            stack_card_moved = testMoveToVectorsCards(drawn_flipped_cards_stack.top());
+        }
+
+    }
+
+    if(stack_card_moved){
+// string: you can play: drawn_flipped_cards_stack.top()->getNumber() (convert to J AND Q) drawn_flipped_cards_stack.top()->getSymbol() && drawn_flipped_cards_stack.top()->getColor()
+        if(drawn_flipped_cards_stack.top()->getNumber() < 11){
+            hint += std::to_string(drawn_flipped_cards_stack.top()->getNumber()) ;
+        }
+        else if(drawn_flipped_cards_stack.top()->getNumber() == 11){
+            hint += "J" ;
+        }
+        else if(drawn_flipped_cards_stack.top()->getNumber() == 12){
+            hint += "Q" ;
+        }
+        else if(drawn_flipped_cards_stack.top()->getNumber() == 13){
+            hint += "K" ;
+        }
+        hint+= " of ";
+        hint += drawn_flipped_cards_stack.top()->getSymbol();
+        return true;
+    }
+    // looping to see if we can move any card from the 7 vectors
+    for (int vec = 0; vec < 7; vec++) {
+        int sz = card_vectors_array[vec].size();
+        hint = " ";
+        bool card_moved = 0;
+        if(sz != 0){
+            card_moved = testMoveToFinalCardsStacks(card_vectors_array[vec][sz-1]);
+            if(!card_moved){
+                card_moved = testMoveToVectorsCards(card_vectors_array[vec][sz-1]);
+            }
+        }
+
+
+        if(card_moved){
+            if(card_vectors_array[vec][sz-1]->getNumber() < 11){
+                hint += std::to_string(card_vectors_array[vec][sz-1]->getNumber()) ;
+            }
+            else if(card_vectors_array[vec][sz-1]->getNumber() == 11){
+                hint += "J" ;
+            }
+            else if(card_vectors_array[vec][sz-1]->getNumber() == 12){
+                hint += "Q" ;
+            }
+            else if(card_vectors_array[vec][sz-1]->getNumber() == 13){
+                hint += "K" ;
+            }
+            hint+= " of ";
+            hint += card_vectors_array[vec][sz-1]->getSymbol();
+            return true;
+
+            // string: you can play: card_played->getNumber() (convert to J AND Q) card_played->getSymbol() && card_played->getColor()
+        }
+
+        for (int i = 0; i < sz-1; i++) {
+            Card * card_played = card_vectors_array[vec][i];
+            if (!card_played->getHidden() &&card_played->getNumber() == 1 ){
+                hint += std::to_string(card_played->getNumber()) ;
+                hint+= " of ";
+                hint += card_played->getSymbol();
+                return true;
+            }
+            if (!card_played->getHidden()) {
+                for (int vec2 = 0; vec2 < NUMBER_OF_VECTORS; vec2++) {
+                    int sz2 = card_vectors_array[vec2].size();
+                    // Check if the current vector is not empty
+                    if (sz2 != 0) {
+                        // Check if the card can move to the current vector
+                        if (card_vectors_array[vec2][sz2 - 1]->getNumber() ==
+                            card_played->getNumber() + 1 &&
+                            card_played->getColor() != card_vectors_array[vec2][sz2 - 1]->getColor()) {
+                            if(card_played->getNumber() < 11){
+                                hint += std::to_string(card_played->getNumber()) ;
+                            }
+                            else if(card_played->getNumber() == 11){
+                                hint += "J" ;
+                            }
+                            else if(card_played->getNumber() == 12){
+                                hint += "Q" ;
+                            }
+                            hint+= " of ";
+                            hint += card_played->getSymbol();
+                            return true;
+                            // string: you can play: card_played->getNumber() (convert to J AND Q) card_played->getSymbol()
+                        }
+                    }
+                        // Check if the current vector is empty and the card to be moved is a king
+                    else if (sz2 == 0 && card_played->getNumber() == 13) {
+                        hint += "K" ;
+                        hint+= " of ";
+                        hint += card_played->getSymbol();
+                        return true;
+                        // string: you can play: card_played->getNumber() (convert to J AND Q) card_played->getSymbol()
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    return false;
+// but i am pretty sure there are more stuff we need to add
+}
+
 // Move From functions
 void Game::MoveFromDrawCardsStack() {
     // Check if The stack is empty (contains a dummy card)
@@ -318,7 +461,7 @@ void Game::MoveFromFlippedCardsStack() {
 void Game::MoveLastCardFromVectors() {
     bool card_moved = 0;
     // start of the vectors part
-    for(int vec = 0; vec < 7; vec++){
+    for(int vec = 0; vec < NUMBER_OF_VECTORS; vec++){
         int vec_size = card_vectors_array[vec].size();
         // Check if the user clicked on the last card of the current vector
         if(card_vectors_array[vec].size() != 0 && card_vectors_array[vec][vec_size -1]->getGlobalBounds().contains(
@@ -347,7 +490,7 @@ void Game::MoveLastCardFromVectors() {
 void Game::MoveMultipleCardsFromVectors() {
     bool card_moved = 0;
     // start of the vectors part
-    for(int vec = 0; vec < 7; vec++){
+    for(int vec = 0; vec < NUMBER_OF_VECTORS; vec++){
         int vec_size = card_vectors_array[vec].size();
         // Check if the user clicked on any card of the vector
         for (int i = 0; i < vec_size - 1; i++) {
@@ -380,7 +523,7 @@ void Game::MoveMultipleCardsFromVectors() {
 void Game::MoveFromFinalCardsStack(Card *playing_card) {
     bool card_moved = 0;
     // start of the vectors part
-    for(int idx = 0; idx < 4; idx++){
+    for(int idx = 0; idx < NUMBER_OF_FINAL_STACKS; idx++){
         // Check if the user clicked on the last card of the current vector
         if(final_cards_stacks[idx].size() != 0 && final_cards_stacks[idx].top() == playing_card){
             card_moved = MoveToVectorsCards(final_cards_stacks[idx].top());
@@ -397,7 +540,7 @@ void Game::MoveFromFinalCardsStack(Card *playing_card) {
 bool Game::MoveToFinalCardsStacks(Card *playing_card) {
     bool finale_stack_flag = 0;
     // checking if the user can play in the final cards stack
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < NUMBER_OF_FINAL_STACKS; i++) {
         // Check if one of the stacks is empty
         if (final_cards_stacks[i].empty()) {
             // Check if the card is an ace
@@ -437,7 +580,7 @@ bool Game::MoveToFinalCardsStacks(Card *playing_card) {
 bool Game::MoveToVectorsCards(Card *playing_card) {
     bool vector_flag = 0;
     // looping on all vectors and comparing with the last element to check if we can play on it
-    for (int vec = 0; vec < 7; vec++) {
+    for (int vec = 0; vec < NUMBER_OF_VECTORS; vec++) {
         int sz = card_vectors_array[vec].size();
         // Check if the current vector is not empty
         if(sz != 0){
@@ -463,7 +606,7 @@ bool Game::MoveToVectorsCards(Card *playing_card) {
 bool Game::MoveMultipleCardsToVectors(int vec_idx, int card_idx) {
     bool vector_flag = 0;
     // looping on all vectors and comparing with the last element to check if we can play on it
-    for (int vec = 0; vec < 7; vec++) {
+    for (int vec = 0; vec < NUMBER_OF_VECTORS; vec++) {
         int sz = card_vectors_array[vec].size();
         // Check if the current vector is not empty
         if(sz != 0){
@@ -492,6 +635,68 @@ bool Game::MoveMultipleCardsToVectors(int vec_idx, int card_idx) {
     return vector_flag;
 }
 
+// Testing functions for hint option
+bool Game::testMoveToFinalCardsStacks(Card *playing_card) {
+    bool finale_stack_flag = 0;
+    // checking if the user can play in the final cards stack
+    for (int i = 0; i < NUMBER_OF_FINAL_STACKS; i++) {
+        // Check if one of the stacks is empty
+        if (final_cards_stacks[i].empty()) {
+            // Check if the card is an ace
+            if (playing_card->getNumber() == 1) {
+                if (i == 0 && playing_card->getSymbol() == "diamond") {
+
+                    finale_stack_flag = 1;
+                    break;
+                } else if (i == 1 && playing_card->getSymbol() == "spades") {
+
+                    finale_stack_flag = 1;
+                    break;
+                } else if (i == 2 && playing_card->getSymbol() == "hearts") {
+
+                    finale_stack_flag = 1;
+                    break;
+                } else if (i == 3 && playing_card->getSymbol() == "clover") {
+                    finale_stack_flag = 1;
+                    break;
+                }
+            }
+        }
+            // Check if one of the stacks wasn't empty
+        else if (final_cards_stacks[i].top()->getNumber() == playing_card->getNumber() - 1 &&
+                 final_cards_stacks[i].top()->getSymbol() == playing_card->getSymbol()) {
+            finale_stack_flag = 1;
+
+            break;
+        }
+    }
+    return finale_stack_flag;
+}
+
+bool Game::testMoveToVectorsCards(Card *playing_card) {
+    bool vector_flag = 0;
+    // looping on all vectors and comparing with the last element to check if we can play on it
+    for (int vec = 0; vec < NUMBER_OF_VECTORS; vec++) {
+        int sz = card_vectors_array[vec].size();
+        // Check if the current vector is not empty
+        if(sz != 0){
+            // Check if the card can move to the current vector
+            if (card_vectors_array[vec][sz - 1]->getNumber() == playing_card->getNumber() + 1 &&
+                card_vectors_array[vec][sz - 1]->getColor() != playing_card->getColor()) {
+                vector_flag = 1;
+                break;
+            }
+        }
+            // Check if the current vector is empty and the card to be moved is a king
+        else if(sz == 0 && playing_card->getNumber() == 13){
+            vector_flag = 1;
+            break;
+        }
+    }
+    // Complete the condition of moving a group of cards
+    return vector_flag;
+}
+
 // Draw to window function
 void Game::DrawFrame() {
     // Drawing The first frame which contains the start button
@@ -507,6 +712,8 @@ void Game::DrawFrame() {
     // Drawing other frames
     window->clear();
     window->draw(*bg_sprite);
+    // Drawing the hint button
+    window->draw(hint_shape);
 
     // Drawing the Timer
     sf::Text timetext("", font);
@@ -535,13 +742,25 @@ void Game::DrawFrame() {
     // Draw Score
     sf::Text score("", font);
     // M_K change the position
-    score.setPosition(70,20);
+    score.setPosition(1000,20);
     score.setCharacterSize(35);
     ss2.str("");
     int sth = sco;
-    ss2 << "Score  " << sth;
+    ss2 << "Score " << sth;
     score.setString(ss2.str());
     window->draw(score);
+
+    // Hint stuff
+    sf::Text hintsth("", font);
+    // M_K change the position
+    hintsth.setPosition(220,20);
+    hintsth.setCharacterSize(35);
+    hinto.str("");
+    hinto << hint;
+    hintsth.setString(hinto.str());
+    if(hint_pressed){
+        window->draw(hintsth);
+    }
 
     // Draw the cards in the draw_cards_stack
     if (!draw_cards_stack.empty()) {
@@ -556,14 +775,14 @@ void Game::DrawFrame() {
         drawn_flipped_cards_stack.top()->drawTo(*window);
     }
     // Draw the cards in the 4 final stacks
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < NUMBER_OF_FINAL_STACKS; i++) {
         if (!final_cards_stacks[i].empty()) {
             final_cards_stacks[i].top()->setPosition({static_cast<float>(DRAW_STACK_X_POS + (3 + i) * DIST_BETWEEN_VECTORS), DRAW_STACK_Y_POS});
             final_cards_stacks[i].top()->drawTo(*window);
         }
     }
     // Draw the cards in the 7 vectors
-    for (int vec = 0; vec < 7; vec++) {
+    for (int vec = 0; vec < NUMBER_OF_VECTORS; vec++) {
         int sz = card_vectors_array[vec].size();
         for (int i = 0; i < sz; i++) {
             if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)){

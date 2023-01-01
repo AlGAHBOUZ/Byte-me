@@ -13,6 +13,9 @@
 
 #define NUMBER_OF_CARDS 52
 
+#define NUMBER_OF_VECTORS 7
+#define NUMBER_OF_FINAL_STACKS 4
+
 // NOTE: Stick to the naming conventions:
 // Functions: Camel Case
 // Variables: Underscores
@@ -37,17 +40,27 @@ private:
     sf::RectangleShape btn_shape;
     sf::Texture btn_texture;
 
+    // Hint Button variables
+    Button *hint_btn;
+    sf::RectangleShape hint_shape;
+    sf::Texture hint_texture;
+    // string for hints
+    std::string hint = " ";
+    std::stringstream hinto;
+    sf::Text hinttext;
+    bool hint_pressed = 0;
+
     // Containers
     // Array of pointers to Cards
     Card *all_cards_array[NUMBER_OF_CARDS];
     // 7 vectors of Cards
-    std::vector<Card *> card_vectors_array[7];
+    std::vector<Card *> card_vectors_array[NUMBER_OF_VECTORS];
     // Stack of the draw Cards
     std::stack<Card *> draw_cards_stack;
     std::stack<Card *> drawn_flipped_cards_stack;
     // The 4 final stacks
     // Order: diamond - spades - hearts - clover
-    std::stack<Card *> final_cards_stacks[4];
+    std::stack<Card *> final_cards_stacks[NUMBER_OF_FINAL_STACKS];
 
     // Other Variables
     bool is_window_on_start_frame;
@@ -70,6 +83,7 @@ private:
     // Private Functions
     void InitWindow();
     void InitStartBtn();
+    void InitHintBtn();
     void InitCards();
     void UpdateBackgroundImage();
     void ShuffleCards();
@@ -90,6 +104,7 @@ public:
     // Winning and losing functions
     bool CheckWinStatus();
     bool CheckLossStatus(); // NEEDS TESTING
+    bool Hint();
 
     // Move From functions
     void MoveFromDrawCardsStack();
@@ -102,6 +117,10 @@ public:
     bool MoveToFinalCardsStacks(Card *playing_card);
     bool MoveToVectorsCards(Card *playing_card);
     bool MoveMultipleCardsToVectors(int vec_idx, int card_idx);
+
+    // Testing functions for hint option
+    bool testMoveToFinalCardsStacks(Card *playing_card);
+    bool testMoveToVectorsCards(Card *playing_card);
 
     // Draw to window functions
     void DrawFrame();

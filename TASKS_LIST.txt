@@ -5,7 +5,7 @@
 - DrawWinFrame function (design by: M_K) ✅
 
 - Edit the second background image (By: M K) ✅
-- Make the sizes of the vector (7) and the final stacks (4) #define 
+- Make the sizes of the vector (7) and the final stacks (4) #define ✅
 - Make any function in any class const (if it can be const) (By: Ayman)
 - Change the name of the project from (HelloSFML) to (Solitaire or any other appropriate name)
 
@@ -14,7 +14,7 @@ Additional Features:-
 - Timer (By: Toppa) ✅
 - Score (By: Toppa) ✅
 - Hint option (By: Sajed) ✅ (Combine with the main branch)
-- Icon 
+- Icon (By: Toppa)
 - Undo option (Most probably we won't do it)
 
 
