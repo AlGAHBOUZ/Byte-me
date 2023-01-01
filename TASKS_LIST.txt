@@ -1,7 +1,6 @@
 - Function to move a group of cards together ✅
 - Fix holding a card ✅
 - Function to check for win (Bool) ✅
-- Function to check for lose (NEEDS TESTING) (Related to hint option)
 - DrawWinFrame function (design by: M_K) ✅
 
 - Edit the second background image (By: M K) ✅
@@ -11,8 +10,9 @@ Additional Features:-
 - Drag & Drop cards (By: M_K)
 - Timer (By: Toppa) ✅
 - Score (By: Toppa) ✅
-- Hint option (By: Sajed) ✅ (Combine with the main branch)
-- Icon (By: Toppa)
+- Hint option (By: Sajed) ✅ 
+- Icon (By: Toppa) ✅ (NEEDS TESTING)
+
 - Undo option (Most probably we won't do it)
 
 
