@@ -6,8 +6,6 @@
 
 - Edit the second background image (By: M K) ✅
 - Make the sizes of the vector (7) and the final stacks (4) #define ✅
-- Make any function in any class const (if it can be const) (By: Ayman)
-- Change the name of the project from (HelloSFML) to (Solitaire or any other appropriate name)
 
 Additional Features:-
 - Drag & Drop cards (By: M_K)

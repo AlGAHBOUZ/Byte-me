@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;CMake Files\SFML\;CMake Files\SFML\lib\;CMake Files\SFML\lib\cmake\;CMake Files\SFML\lib\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug"/>
+				<Option working_dir="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="HelloSFML">
-				<Option output="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/HelloSFML.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug"/>
+				<Option output="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/HelloSFML.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -36,15 +36,15 @@
 					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 HelloSFML"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 HelloSFML"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="HelloSFML/fast">
-				<Option output="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/HelloSFML.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug"/>
+				<Option output="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/HelloSFML.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -61,73 +61,73 @@
 					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 HelloSFML/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 HelloSFML/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug"/>
+				<Option working_dir="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug"/>
+				<Option working_dir="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase3/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/Button.cpp">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/Button.cpp">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/Button.h">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/Button.h">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/Card.cpp">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/Card.cpp">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/Card.h">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/Card.h">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/Game.cpp">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/Game.cpp">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/Game.h">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/Game.h">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/main.cpp">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/main.cpp">
 			<Option target="HelloSFML"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/CMakeLists.txt">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/SFML/lib/cmake/SFML/SFMLConfig.cmake">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/SFML/lib/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\SFML\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/SFML/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/SFML/lib/cmake/SFML/SFMLConfigDependencies.cmake">
 			<Option virtualFolder="CMake Files\SFML\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/SFML/lib/cmake/SFML/SFMLConfigVersion.cmake">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/SFML/lib/cmake/SFML/SFMLConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\SFML\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/SFML/lib/cmake/SFML/SFMLStaticTargets-debug.cmake">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/SFML/lib/cmake/SFML/SFMLStaticTargets-debug.cmake">
 			<Option virtualFolder="CMake Files\SFML\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/SFML/lib/cmake/SFML/SFMLStaticTargets-release.cmake">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/SFML/lib/cmake/SFML/SFMLStaticTargets-release.cmake">
 			<Option virtualFolder="CMake Files\SFML\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/EUI/Data Structures/Project/phase3/HelloSFML/SFML/lib/cmake/SFML/SFMLStaticTargets.cmake">
+		<Unit filename="D:/EUI/Data Structures/Project/phase4/Byte-me/HelloSFML/SFML/lib/cmake/SFML/SFMLStaticTargets.cmake">
 			<Option virtualFolder="CMake Files\SFML\lib\cmake\SFML\"/>
 		</Unit>
 	</Project>
