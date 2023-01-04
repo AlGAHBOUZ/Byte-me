@@ -169,7 +169,7 @@ void Game::PollEvents() {
                     // If the user clicked the start button
                     if (start_btn->isMouseOver(*window)) {
                         is_window_on_start_frame = 0;
-                        break;
+                        //break;
                     }
                     // If the user clicked the hint button
                     if (hint_btn->isMouseOver(*window)) {
