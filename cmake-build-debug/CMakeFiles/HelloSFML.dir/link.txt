@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\HelloSFML.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\HelloSFML.dir/objects.a @CMakeFiles\HelloSFML.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\HelloSFML.dir/objects.a -Wl,--no-whole-archive -o HelloSFML.exe -Wl,--out-implib,libHelloSFML.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HelloSFML.dir\linklibs.rsp

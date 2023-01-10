@@ -1,0 +1,3 @@
+D:/EUI/Data Structures/Project/Solitaire Project (Byte Me Team)/Solitaire (Byte Me Team)/cmake-build-debug/CMakeFiles/HelloSFML.dir
+D:/EUI/Data Structures/Project/Solitaire Project (Byte Me Team)/Solitaire (Byte Me Team)/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/EUI/Data Structures/Project/Solitaire Project (Byte Me Team)/Solitaire (Byte Me Team)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
