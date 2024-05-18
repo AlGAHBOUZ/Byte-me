@@ -14,9 +14,11 @@ Solitaire Game is a classic card game implemented in C++. Enjoy the timeless gam
 2. **Navigate to the Project Directory**
     ```bash
    cd solitaire-game
+    
 3. **Compile the Code**
-  ```bash
+    ```bash
    g++ -o solitaire main.cpp
+
 4. **Run the Game**
   ./solitaire
 
